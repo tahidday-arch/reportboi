@@ -1,0 +1,76 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile and personal bio information",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "father": { "type": "string" },
+        "mother": { "type": "string" },
+        "birthDate": { "type": "string" },
+        "nid": { "type": "string" },
+        "religion": { "type": "string" },
+        "nationality": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "bloodGroup": { "type": "string" },
+        "height": { "type": "string" },
+        "weight": { "type": "string" },
+        "eyeProblem": { "type": "string" },
+        "otherHealth": { "type": "string" },
+        "education": { "type": "array" },
+        "family": { "type": "array" },
+        "profession": { "type": "object" },
+        "skills": { "type": "string" },
+        "languages": { "type": "string" },
+        "profileImage": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId"]
+    },
+    "MonthlyReport": {
+      "title": "MonthlyReport",
+      "description": "Monthly personal activity report",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "year": { "type": "string" },
+        "month": { "type": "string" },
+        "monthlyPlan": { "type": "object" },
+        "dailyEntries": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "year", "month"]
+    },
+    "PersonalNote": {
+      "title": "PersonalNote",
+      "description": "Personal reflections and notes",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "notesText": { "type": "string" },
+        "lastSavedTimestamp": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "notesText"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document keyed by auth UID"
+    },
+    "/users/{userId}/reports/{reportId}": {
+      "schema": "MonthlyReport",
+      "description": "Monthly activity reports for the user"
+    },
+    "/users/{userId}/notes/{noteId}": {
+      "schema": "PersonalNote",
+      "description": "Personal notes for the user"
+    }
+  }
+}

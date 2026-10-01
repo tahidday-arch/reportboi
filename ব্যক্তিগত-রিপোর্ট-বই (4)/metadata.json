@@ -1,0 +1,8 @@
+{
+  "name": " ব্যক্তিগত রিপোর্ট বই",
+  "description": "ডিজিটাল উপায়ে ব্যক্তিগত রিপোর্ট ও মাসিক পরিকল্পনা সহজে সংরক্ষণ, সম্পাদনা এবং PDF আকারে তৈরি করার স্মার্ট অ্যান্ড্রয়েড অ্যাপ।",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
